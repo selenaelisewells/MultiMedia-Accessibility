@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basic custom controls</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Basic custom controls</h1>
+
+    <section class="player">
+        <h2 class="hidden">video</h2>
+        <video controls preload="metadata">
+      <source src="./video/Guardians.mp4" type="video/mp4">
+      <source src="./video/Guardians.mp4" type="video/webm">
+      <track default
+             kind="captions"
+             srclang="en"
+             src="./Captions/captions.vtt"
+      >
+      <p>Your browser doesn't support HTML5 video. Here is a <a href="./video/Guardians.mp4">link to the video</a> instead.</p>
+    </video>
+
+        <div class="controls">
+            <button class="playpause">Play</button>
+            <button class="stop">Stop</button>
+            <button class="rwd">Rwd</button>
+            <button class="fwd">Fwd</button>
+            <div class="time">00:00</div>
+        </div>
+    </section>
+
+    <div class="transcript-container">
+        <div class="transcript-control">
+            <button>Show transcript</button>
+        </div>
+        <section class="transcript">
+
+            <h2 class="hidden ">Transcript</h2>
+
+            <p>**Music**</p>
+
+            <p><strong>Officer</strong>: Drop it now!</p>
+
+            <p><strong>Quill</strong>: Yeah hey cool it man, no problem, no problem at all. </p>
+
+            <p><strong>Officer</strong>: Who are you?</p>
+
+            <p><strong>Quill</strong>:Star-lord. </p>
+
+            <p><strong>Officer</strong>: Who?</p>
+
+            <p><strong>Quill</strong>:Star-lord man... Legendary outlaw... Forget it. </p>
+
+            <p><strong>Corpsman Dey</strong>: We arrested these five bands and off check out the rap sheets. Drax aka the destroyer since his wife and family were killed he’s been on a rampage across the galaxy for vengeance. Gamora soldier assassin wanted
+                on over a dozen counts of murder. Rocket wanted on over 50 charges of vehicular theft and escape from lockup.
+
+            </p>
+
+            <p><strong>Supernova</strong>:What the hell.</p>
+
+            <p><strong>Corpsman Dey</strong>: Groot he’s been traveling recently as Rocket’s personal houseplant slash muscle. Peter jason quill he's also known as star lord.
+            </p>
+
+            <p><strong>Supernova</strong>:Who calls him that?</p>
+
+            <p><strong>Corpsman Dey</strong>: Himself mostly. He’s wanted largely on charges of minor assault , public intoxication and fraud. </p>
+
+            <p><strong>Quill</strong>:Oh, I’m sorry I, I didn’t know how this machine worked.</p>
+
+            <p>**Music**</p>
+
+            <p><strong>Quill</strong>:Hey hey hey - that’s mine.</p>
+
+            <p>**Music**</p>
+
+            <p><strong>Quill</strong>:You son of a bitch. Hey take those headphones off RIGHT NOW!</p>
+
+            <p>**Music**</p>
+
+            <p><strong>Corpsman Dey</strong>:They call themselves the guardians of the galaxy. </p>
+
+            <p><strong>Supernova</strong>:What a bunch of a-holes </p>
+
+            <p>**Music**</p>
+        </section>
+    </div>
+
+    <script src="main.js "></script>
+</body>
+
+</html>
