@@ -1,9 +1,9 @@
 # MultiMedia-Accessibility
 ## Creating audio, movies and tv show accessible for everyone.
 
-##Accessibility Findings
+## Accessibility Findings
 
-###Video - 
+### Video - 
 
 -All video that is image based need to have caption options. Captions are different from subtitle as captions are targeted towards the deaf or hard of hearing. Captions add in descriptions of important noises and sounds as well as speach.
 
@@ -18,7 +18,7 @@
 -Audio should be mutable.
 
 
-###Audio - 
+### Audio - 
 
 -Like video captions should be created for audio elements so that they are accessible via metadata.
 
@@ -29,7 +29,7 @@
 -Audio should not be playing when you arrive on the page and should always be mutable and stoppable once it starts.
 
 
-###General - 
+### General - 
 
 -Proper semantic HTML should be used with sectioning elements. Aria areas can be added to help screen readers know where they are on the page. 
 
