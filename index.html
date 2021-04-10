@@ -8,13 +8,13 @@
 </head>
 
 <body>
-    <h1>Basic custom controls</h1>
+    <h1 class="hidden">Accessible Media</h1>
 
     <section class="player">
-        <h2 class="hidden">video</h2>
+        <h2 class="hidden video">Main Video</h2>
         <video controls preload="metadata">
       <source src="./video/Guardians.mp4" type="video/mp4">
-      <source src="./video/Guardians.mp4" type="video/webm">
+      <source src="./video/Guardians.webm" type="video/webm">
       <track default
              kind="captions"
              srclang="en"
@@ -29,12 +29,21 @@
             <button class="rwd">Rwd</button>
             <button class="fwd">Fwd</button>
             <div class="time">00:00</div>
+            <div class="progress">
+                <progress id="progress" value="0" min="0">
+                   <span id="progress-bar"></span>
+                </progress>
+            </div>
+            <button id="mute" type="button" data-state="mute">Mute/Unmute</button>
+            <button id="volinc" type="button" data-state="volup">Vol+</button>
+            <button id="voldec" type="button" data-state="voldown">Vol-</button>
+            <button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
         </div>
     </section>
 
     <div class="transcript-container">
         <div class="transcript-control">
-            <button>Show transcript</button>
+            <button aria-expanded="false" class="Toggle button">Show Transcript</button>
         </div>
         <section class="transcript">
 
