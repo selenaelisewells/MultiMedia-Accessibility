@@ -6,11 +6,30 @@ const timeLabel = document.querySelector('.time');
 const player = document.querySelector('video');
 const videoControls = document.querySelector('.controls');
 const progressBar = document.getElementById('progress-bar');
+const captions = document.querySelector('tracks');
+const CCBtn = document.querySelector('#captions');
 
 player.addEventListener('load', function() {
     var tracks = player.textTracks[0];
     tracks.mode = 'showing';
+
+
 })
+
+CCBtn.addEventListener('click', function() {
+
+    console.log('CC toggle clicked')
+    if (player.textTracks[0].mode === 'showing') {
+        player.textTracks[0].mode = 'hidden';
+    } else {
+        player.textTracks[0].mode = 'showing'
+    }
+
+})
+
+
+
+
 player.removeAttribute('controls');
 
 
