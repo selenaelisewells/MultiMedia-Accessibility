@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basic custom controls</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="hidden">Accessible Media</h1>
+
+    <section class="player">
+        <h2 class="hidden video">Main Video</h2>
+        <audio controls preload="metadata">
+            <source src="./video/hookedOnAFeeling.mp3" type="audio/mp3">
+            <source src="./video/hookedOnAFeeling.mp3" type="audio/ogg">
+            
+            <track default
+                    kind="captions"
+                    srclang="en"
+                    src="./Captions/audioCaptions.vtt">
+ 
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="./video/hookedOnAFeeling.mp3">link to the video</a> instead.</p>
+        </audio>
+
+        <div class="controls">
+            <button class="playpause">Play</button>
+            <button class="stop">Stop</button>
+            <button class="rwd">Rwd</button>
+            <button class="fwd">Fwd</button>
+            <button id="mute" type="button" data-state="mute">Mute/Unmute</button>
+            <button id="volinc" type="button" data-state="volup">Vol+</button>
+            <button id="voldec" type="button" data-state="voldown">Vol-</button>
+            <button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
+            <button id="captions" type="button">CC</button>
+
+        </div>
+    </section>
+
+    <div class="transcript-container">
+        <div class="transcript-control">
+            <button aria-expanded="false" class="Toggle button">Show Transcript</button>
+        </div>
+        <section class="transcript">
+
+            <h2 class="hidden ">Transcript</h2>
+
+            <p>Ooga-Chaka Ooga-Ooga Ooga-Chaka Ooga-Ooga Ooga-Chaka Ooga-Ooga Ooga-Chaka Ooga-Ooga Ooga-Chaka Ooga-Ooga I can't stop this feeling Deep inside of me Girl, you just don't realize What you do to me When you hold me In your arms so tight You
+                let me know Everything's all right I'm hooked on a feeling I'm high on believing That you're in love with me Lips as sweet as candy Its taste is on my mind Girl, you got me thirsty For another cup o' wine Got a bug from you girl But I
+                don't need no cure I'll just stay a victim If I can for sure All the good love When we're all alone Keep it up girl Yeah, you turn me on I'm hooked on a feeling I'm high on believing That you're in love with me All the good love When we're
+                all alone Keep it up girl Yeah, you turn me on I'm hooked on a feeling I'm high on believing That you're in love with me I'm hooked on a feeling And I'm high on believing That you're in love with me I said I'm hooked on a feeling And I'm
+                high on believing That you're in love with me I'm hooked on a feeling</p>
+
+        </section>
+    </div>
+
+    <script src="audio.js "></script>
+</body>
+
+</html>
