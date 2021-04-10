@@ -3,15 +3,32 @@ const stopBtn = document.querySelector('.stop');
 const rwdBtn = document.querySelector('.rwd');
 const fwdBtn = document.querySelector('.fwd');
 const timeLabel = document.querySelector('.time');
-const player = document.querySelector('video');
+const player = document.querySelector('audio');
 const videoControls = document.querySelector('.controls');
-const progressBar = document.getElementById('progress-bar');
+const captions = document.querySelector('tracks');
+const CCBtn = document.querySelector('#captions');
+const audioPlayer = document.querySelector('audio');
 
 player.addEventListener('load', function() {
     var tracks = player.textTracks[0];
     tracks.mode = 'showing';
 })
-player.removeAttribute('controls');
+
+CCBtn.addEventListener('click', function() {
+
+    console.log('CC toggle clicked')
+    if (player.textTracks[0].mode === 'showing') {
+        player.textTracks[0].mode = 'hidden';
+    } else {
+        player.textTracks[0].mode = 'showing'
+    }
+
+})
+
+
+
+
+// player.removeAttribute('controls');
 
 
 //create play control functionality
@@ -53,27 +70,26 @@ mute.addEventListener('click', function(e) {
 });
 
 
-player.ontimeupdate = function() {
-    let minutes = Math.floor(player.currentTime / 60);
-    let seconds = Math.floor(player.currentTime - minutes * 60);
-    let minuteValue;
-    let secondValue;
+// player.ontimeupdate = function() {
+//     let minutes = Math.floor(player.currentTime / 60);
+//     let seconds = Math.floor(player.currentTime - minutes * 60);
+//     let minuteValue;
+//     let secondValue;
 
-    if (minutes < 10) {
-        minuteValue = "0" + minutes;
-    } else {
-        minuteValue = minutes;
-    }
+//     if (minutes < 10) {
+//         minuteValue = "0" + minutes;
+//     } else {
+//         minuteValue = minutes;
+//     }
 
-    if (seconds < 10) {
-        secondValue = "0" + seconds;
-    } else {
-        secondValue = seconds;
-    }
+//     if (seconds < 10) {
+//         secondValue = "0" + seconds;
+//     } else {
+//         secondValue = seconds;
+//     }
 
-    mediaTime = minuteValue + ":" + secondValue;
-    timeLabel.textContent = mediaTime;
-};
+//     mediaTime = minuteValue + ":" + secondValue;
+// };
 
 const transcriptControl = document.querySelector('.Toggle');
 const transcript = document.querySelector('.transcript');
@@ -88,8 +104,6 @@ transcriptControl.addEventListener('click', function() {
 // Display the user defined video controls
 videoControls.setAttribute('data-state', 'visible');
 
-var supportsProgress = (document.createElement('progress').max !== undefined);
-if (!supportsProgress) progress.setAttribute('data-state', 'fake');
 
 
 //volume
@@ -179,15 +193,4 @@ document.addEventListener('mozfullscreenchange', function() {
 });
 document.addEventListener('msfullscreenchange', function() {
     setFullscreenData(!!document.msFullscreenElement);
-});
-
-//progress bar
-player.addEventListener('loadedmetadata', function() {
-    progress.setAttribute('max', player.duration);
-});
-
-player.addEventListener('timeupdate', function() {
-    if (!progress.getAttribute('max')) progress.setAttribute('max', player.duration);
-    progress.value = player.currentTime;
-    progressBar.style.width = Math.floor((player.currentTime / player.duration) * 100) + '%';
 });

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basic custom controls</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="smallNav">
+        <ul>
+            <li><a href="./index.html">Switch to the Accessible Video Player</a></li>
+        </ul>
+
+    </nav>
+    <h1 class="hidden">Accessible Media</h1>
+
+    <section class="player">
+        <h2 class="video">Accessible Audio</h2>
+        <audio controls preload="metadata">
+            <source src="./video/hookedOnAFeeling.mp3" type="audio/mp3">
+            <source src="./video/hookedOnAFeeling.mp3" type="audio/ogg">
+            
+            <track default
+                    kind="captions"
+                    srclang="en"
+                    src="./Captions/audioCaptions.vtt">
+ 
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="./video/hookedOnAFeeling.mp3">link to the video</a> instead.</p>
+        </audio>
+
+        <div role="region" class="controls">
+            <button class="playpause">Play</button>
+            <button class="stop">Stop</button>
+            <button aria-label="Re-wind" class="rwd">Rwd</button>
+            <button aria-label="Fast forward" class="fwd">Fwd</button>
+            <button id="mute" type="button" data-state="mute">Mute/Unmute</button>
+            <button aria-label="Increase volume" id="volinc" type="button" data-state="volup">Vol+</button>
+            <button aria-label="decrease volume" id="voldec" type="button" data-state="voldown">Vol-</button>
+            <button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
+            <button aria-label="closed captions" id="captions" type="button">CC</button>
+
+        </div>
+    </section>
+
+    <div class="transcript-container">
+        <div class="transcript-control">
+            <button aria-expanded="false" class="Toggle button">Show Transcript</button>
+        </div>
+        <section class="transcript">
+
+            <h2 class="hidden">Transcript</h2>
+
+            <p>Ooga-Chaka Ooga-Ooga.<br> Ooga-Chaka Ooga-Ooga. <br>Ooga-Chaka Ooga-Ooga.<br> Ooga-Chaka Ooga-Ooga.<br> Ooga-Chaka Ooga-Ooga.<br> I can't stop this feeling.<br> Deep inside of me <br>Girl, you just don't realize <br> What you do to me. <br>When
+                you hold me.<br> In your arms so tight.
+                <br> You let me know<br> Everything's all right<br> I'm hooked on a feeling<br> I'm high on believing<br> That you're in love with me <br>Lips as sweet as candy<br> Its taste is on my mind <br>Girl, you got me thirsty<br> For another cup
+                o' wine <br>Got a bug from you girl<br> But I don't need no cure<br> I'll just stay a victim<br> If I can for sure<br> All the good love<br> When we're all alone <br>Keep it up girl<br> Yeah, you turn me on<br> I'm hooked on a feeling
+                <br>I'm high on believing<br> That you're in love with me <br>All the good love<br> When we're all alone <br>Keep it up girl<br> Yeah, you turn me on<br> I'm hooked on a feeling <br>I'm high on believing <br>That you're in love with me<br>                I'm hooked on a feeling <br>And I'm high on believing <br>That you're in love with me<br> I said I'm hooked on a feeling<br> And I'm high on believing <br>That you're in love with me <br>I'm hooked on a feeling</p>
+
+        </section>
+    </div>
+
+    <script src="audio.js "></script>
+</body>
+
+</html>
