@@ -10,6 +10,13 @@
 <body>
     <h1 class="hidden">Accessible Media</h1>
 
+    <nav class="smallNav">
+        <ul>
+            <li><a href="./audioPlayer.html">Accessible Video Player</a></li>
+        </ul>
+
+    </nav>
+
     <section class="player">
         <h2 class="hidden video">Main Video</h2>
         <video controls preload="metadata">
@@ -26,11 +33,11 @@
       <p>Your browser doesn't support HTML5 video. Here is a <a href="./video/Guardians.mp4">link to the video</a> instead.</p>
     </video>
 
-        <div class="controls">
+        <div role="region" class="controls">
             <button class="playpause">Play</button>
             <button class="stop">Stop</button>
-            <button class="rwd">Rwd</button>
-            <button class="fwd">Fwd</button>
+            <button aria-label="Re-wind" class="rwd">Rwd</button>
+            <button aria-label="Fast Forward" class="fwd">Fwd</button>
             <div class="time">00:00</div>
             <div class="progress">
                 <progress id="progress" value="0" min="0">
@@ -38,10 +45,10 @@
                 </progress>
             </div>
             <button id="mute" type="button" data-state="mute">Mute/Unmute</button>
-            <button id="volinc" type="button" data-state="volup">Vol+</button>
-            <button id="voldec" type="button" data-state="voldown">Vol-</button>
-            <button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
-            <button id="captions" type="button">CC</button>
+            <button aria-label="increase volume" id="volinc" type="button" data-state="volup">Vol+</button>
+            <button aria-label="decrease volume" id="voldec" type="button" data-state="voldown">Vol-</button>
+            <button aria-label="toggle full screen" id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
+            <button aria-label="captions" id="captions" type="button">CC</button>
 
         </div>
     </section>
@@ -52,7 +59,7 @@
         </div>
         <section class="transcript">
 
-            <h2 class="hidden ">Transcript</h2>
+            <h2 class="hidden">Transcript</h2>
 
             <p>**Music**</p>
 
